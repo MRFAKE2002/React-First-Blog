@@ -1,3 +1,7 @@
+This project is my first react app 
+
+course-youtube-link: https://youtube.com/playlist?list=PLprvbQiR3cN-N-eKoeMiBmefpspitwwGW&si=jU43jyhtBTvLQYBz
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
