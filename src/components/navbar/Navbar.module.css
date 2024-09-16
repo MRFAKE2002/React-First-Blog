@@ -4,9 +4,14 @@
     /* dar inja baraye inke betunim mohtaviat dakhel div ra be vasat biarim az 'display: flex;' estefade mikonim va 
     meghdar 'justify-content: center;' ra az nazar chap va rast va 'align-items: center;' ra az nazar bala va payin */
     display: flex;
+    flex-direction: row-reverse;
     justify-content: end;
     align-items: center;
     padding-right: 40px;
+}
+
+.header h3 {
+    margin-left: 20px;
 }
 
 .header ul {
