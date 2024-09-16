@@ -1,0 +1,20 @@
+.homeWrapper {
+
+}
+
+.homeWrapper h2 {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.homeArticles {
+    width: 100%;
+    height: auto;
+    /* in baraye ine ke article cart ha kenar ham gharar begiran pas bayad be valedeshun 'display: flex;' bezarim */
+    display: flex;
+    /* baraye inke bein article cart ha betunim fasele bedim bayad az 'justify-content: space-between;' estefade konim */
+    justify-content: space-between;
+    /* az ounjayi ke momkene tedad article kart bishtar az 4 ta bashe pas baghie bayad beran khat badi pas bayad 'flex-wrap: wrap;' bahse */
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
