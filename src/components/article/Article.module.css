@@ -1,0 +1,28 @@
+.articleCart {
+    /* 
+        ma miaim meghdar arz ro mizarim 'width: 23%;' inja ma 4 article cart mikhaim pas bayad bashe 'width: 25%;' ama 
+        beinesh ham fasele mikhaim bashe pas miaim 'width: 23%;' mizarim va ba estefade az gozashtan 'display: flex;' baraye 
+        valede in article cart mitunim ina ro kenar ham bezarim va ba gozashtan 'justify-content: space-between;' bein cart ha 
+        fasele bezarim
+    */
+    width: 23%;
+    height: auto;
+    margin-top: 15px;
+    box-shadow: 1px 2px 3px #777;
+}
+
+.articleCart img {
+    width: 100%;
+    height: auto;
+}
+
+.articleCart h3 {
+    text-align: right;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.articleCart p {
+    text-align: right;
+    padding: 0 10px;
+}
