@@ -1,13 +1,16 @@
+.headerWrapper {
+    /* baraye inke zir navbar yek 'box-shadow' bezarim bayad baraye inke sar ta sar bashe dakhel div bashe ke valede avale ghabl az class container */
+    box-shadow: 0px 2px 3px #ccc;
+}
+
 .header {
     height: 60px;
-    box-shadow: 0px 2px 3px #ccc;
     /* dar inja baraye inke betunim mohtaviat dakhel div ra be vasat biarim az 'display: flex;' estefade mikonim va 
     meghdar 'justify-content: center;' ra az nazar chap va rast va 'align-items: center;' ra az nazar bala va payin */
     display: flex;
     flex-direction: row-reverse;
     justify-content: end;
     align-items: center;
-    padding-right: 40px;
 }
 
 .header h3 {

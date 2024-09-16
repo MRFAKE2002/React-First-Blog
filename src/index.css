@@ -14,9 +14,19 @@ code {
 
 /* global css */
 
-h1, h2, h3, h4, h5, h6, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
   margin: 0;
   padding: 0;
   /* baraye az bein bordan pishfarz tag 'ul' bayad gozashte beshe */
   list-style: none;
+}
+
+.container {
+  padding: 0 40px;
 }
