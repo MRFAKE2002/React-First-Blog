@@ -4,25 +4,25 @@
   "data": [
     {
       "id": 1,
-      "imageUrl": "../../components/assets/images/articleImage.png",
+      "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article1",
       "readTimer": "3"
     },
     {
       "id": 2,
-      "imageUrl": "../../components/assets/images/articleImage.png",
+      "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article2",
       "readTimer": "4"
     },
     {
       "id": 3,
-      "imageUrl": "../../components/assets/images/articleImage.png",
+      "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article3",
       "readTimer": "2"
     },
     {
       "id": 4,
-      "imageUrl": "../../components/assets/images/articleImage.png",
+      "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article4",
       "readTimer": "6"
     }

@@ -8,6 +8,9 @@ import Article from "../../components/article/Article";
 // hooks
 import { useEffect, useState } from "react";
 
+// libraries
+import axios from "axios";
+
 function Home(params) {
   /*
     useState: yek hook ke amalan mesle yek moteghayer amal mikone va meghdar dar khodesh negah midare vali be format react hastesh
@@ -30,13 +33,58 @@ function Home(params) {
   useEffect(() => {
     // API call
 
-    // baraye anjam API call va gereftan data mishe az 'fetch' estefade kard vali mishe az ketabkhune 'axios' ham estefade kard
-
-
-    // dar inja ma az useState baraye taghyir maghadir data estefade kardim va useEffect motevajeh shod ke bayad rerender bokone
-    setArticlesAPI();
-
-
+    /* 
+      baraye anjam API call va gereftan data mishe az 'fetch' estefade kard vali mishe az ketabkhune 'axios' ham estefade kard
+      dar 'get' url oun api ro minevisim va badesh dakhel 'then' arrow function minevisim ke data dakhel api dar yek moteghayer gharar migire va ma 
+      bayad inja baraye taghyir moteghayer 'articlesAPI' bayad az useState estefade konim ta useEffect motevajeh taghyir meghdar moteghayer beshe va 
+      khodesh rerender ro anjam bede va data namayesh dade beshe.
+      'catch' ham baraye zamanie ke be error khordim oun moghe arrow function seda zade mishe ke migim chi kar bokone.
+    */
+    axios
+      .get("http://localhost:8000/data")
+      .then((api) => {
+        /*
+          dar inja baraye inke befahmim data gerefte shode tavasot axios che chizi dare az 'console.log(api);' estefade kardim 
+          va khoruji:
+          '
+          Object
+            config: 
+            {transitional: {…}, adapter: Array(3), transformRequest: Array(1), transformResponse: Array(1), timeout: 0, …}
+            data: 
+            (4) [{…}, {…}, {…}, {…}]
+            headers: 
+            AxiosHeaders {content-length: '574', content-type: 'application/json'}
+            request: 
+            XMLHttpRequest {url: 'http://localhost:8000/data', onreadystatechange: null, readyState: 4, timeout: 0, withCredentials: false, …}
+            status: 
+            200
+            statusText: 
+            "OK"
+            [[Prototype]]: 
+            Object
+          '
+          dar inja mifahmim data vojud dare pas ba zadan 'api.data' be list az object ke har kodum data marbut be yek article hast be ma dade mishe
+        */
+        // dar inja ma az useState baraye taghyir maghadir data estefade kardim va useEffect motevajeh shod ke bayad rerender bokone
+        setArticlesAPI(api.data);
+        /*
+          alan maghdar moteghayer articlesAPI list data object articles:
+          '
+          0: 
+          {id: '1', imageUrl: '../../components/assets/images/articleImage.png', articleName: 'article1', readTimer: '3'}
+          1: 
+          {id: '2', imageUrl: '../../components/assets/images/articleImage.png', articleName: 'article2', readTimer: '4'}
+          2: 
+          {id: '3', imageUrl: '../../components/assets/images/articleImage.png', articleName: 'article3', readTimer: '2'}
+          3: 
+          {id: '4', imageUrl: '../../components/assets/images/articleImage.png', articleName: 'article4', readTimer: '6'}
+          length: 4
+          '
+        */
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -45,7 +93,16 @@ function Home(params) {
       <div className="container">
         <h2>مقالات جدید</h2>
         <div className={style.homeArticles}>
-          <Article />
+          {/* 
+            dar inja baraye inke bayad dinamic baraye har yek az object darun list articlesAPI bayad component 'Article' estefade beshe
+            pas ma bayad inja az 'map' estefade konim ke miad dakhel list araye halghe mizane va har yek az object darun list ra dar 
+            khoruji return mikone.
+            dar asl dalil asli ke az 'map' bejaye 'foreach' estefade mishe ine ke har bar dar khoruji object ro return mikone
+          */}
+          {articlesAPI.map( articleObject => (
+            // dar inja object be surat props be component ersal mishe va baraye moshakhas budan har component bayad 'key' unique bedim.
+            <Article article={articleObject} />
+          ))}
         </div>
       </div>
     </div>
