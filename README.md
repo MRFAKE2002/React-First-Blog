@@ -1,7 +1,3 @@
-This project is my first react app 
-
-course-youtube-link: https://youtube.com/playlist?list=PLprvbQiR3cN-N-eKoeMiBmefpspitwwGW&si=jU43jyhtBTvLQYBz
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+This project is my first react app try to make blog.
+
+course-youtube-link: https://youtube.com/playlist?list=PLprvbQiR3cN-N-eKoeMiBmefpspitwwGW&si=jU43jyhtBTvLQYBz
+
+In this project we use axios for API call so:
+
+### `npm install axios`
+
+We make our local API in project for get it by axios so we have to run it:
+
+### `npx json-server --watch data/api.json --port 8000`
