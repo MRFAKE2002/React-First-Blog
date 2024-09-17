@@ -1,3 +1,4 @@
+// css
 import style from "./Navbar.module.css";
 
 function Navbar(props) {
@@ -10,8 +11,6 @@ function Navbar(props) {
         title: 'روزبه شاپ'
     }
   */
-
-  console.log(props);
 
   return (
     <div className= {style.headerWrapper}>

@@ -2,14 +2,17 @@
 import style from "./Article.module.css";
 
 // article image
-import articleImage from "../assets/images/articleImage.png"
+// import articleImage from "../assets/images/articleImage.png"
 
 function Article(props) {
+
+  console.log(props);
+
   return (
     <div className={style.articleCart}>
-        <img src={articleImage} alt="" />
-        <h3>اسم مقاله</h3>
-        <p>مدت زمان خواندن مقاله</p>
+        <img src={props.article.imageUrl} alt="" />
+        <h3>{props.article.articleName}</h3>
+        <p>{props.article.readTimer} مدت زمان خواندن مقاله </p>
     </div>
   );
 }
