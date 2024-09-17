@@ -1,0 +1,30 @@
+{
+  "state": true,
+  "message": "success",
+  "data": [
+    {
+      "id": 1,
+      "imageUrl": "../../components/assets/images/articleImage.png",
+      "articleName": "article1",
+      "readTimer": "3"
+    },
+    {
+      "id": 2,
+      "imageUrl": "../../components/assets/images/articleImage.png",
+      "articleName": "article2",
+      "readTimer": "4"
+    },
+    {
+      "id": 3,
+      "imageUrl": "../../components/assets/images/articleImage.png",
+      "articleName": "article3",
+      "readTimer": "2"
+    },
+    {
+      "id": 4,
+      "imageUrl": "../../components/assets/images/articleImage.png",
+      "articleName": "article4",
+      "readTimer": "6"
+    }
+  ]
+}
