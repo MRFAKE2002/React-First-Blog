@@ -1,6 +1,9 @@
 // css
 import style from "./Navbar.module.css";
 
+// libraries
+import { Link } from "react-router-dom";
+
 function Navbar(props) {
   /* 
     zamani ke bekhaim az js estefade konim va dar html gharar bedim bayad dakhel {} bezarim 
@@ -13,14 +16,24 @@ function Navbar(props) {
   */
 
   return (
-    <div className= {style.headerWrapper}>
+    <div className={style.headerWrapper}>
       <div className="container">
         <div className={style.header}>
           <h3> {props.title} </h3>
           <ul>
-            <li>لیست مقالات</li>
+            <li>
+              {/* 
+                dar inja baraye sakht link ya safhe bandi dar react bayad az tag 'Link' estefade konim ke dar inja amalan baraye ma 
+                miad tag '<a href=""></a>' misaze va dar tag 'a' ma href darim baraye vared kardan url ke mikahim berim vali dar 
+                inja ma az element 'to' estefade mikonim va daghighan hamun url ke be onvan 'path' dar tag 'Route' dar App.jsx
+                dadim bayad dade behse
+              */}
+              <Link to="/">لیست مقالات</Link>
+            </li>
             <li>ساخت مقاله جدید</li>
-            <li>درباره ما</li>
+            <li>
+              <Link to="/about-us">درباره ما</Link>
+            </li>
           </ul>
         </div>
       </div>

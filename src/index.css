@@ -30,3 +30,12 @@ ul {
 .container {
   padding: 0 40px;
 }
+
+/* 
+  dar inja chon ma baraye component 'Navbar' safhe bandi darim va az tag 'Link' estefade kardim miad baramun amalan tag 'a' misaze
+  ke bayad be surat default khat zir link va rang ro siah konim
+*/
+a {
+  color: #333;
+  text-decoration: none;
+}
