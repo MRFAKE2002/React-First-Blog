@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* 
+      dalil estefade az tag 'BrowserRouter' ine ke ma bedunim dar kodam safe budim va hastim yani mishe ham back zad ham forward va in ghabeliat tavasot 
+      in tag be ma mide.
+    */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
