@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 // libraries
 import axios from "axios";
+import Footer from "../../components/footer/Footer";
 
 function Home(params) {
   /*
@@ -105,6 +106,7 @@ function Home(params) {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
