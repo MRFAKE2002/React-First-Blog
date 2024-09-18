@@ -81,3 +81,7 @@ In this project we use axios for API call so:
 We make our local API in project for get it by axios so we have to run it:
 
 ### `npx json-server --watch data/api.json --port 8000`
+
+In this project we use react-router-dom for making routing and know the pages we go so:
+
+### `npm install react-router-dom`
