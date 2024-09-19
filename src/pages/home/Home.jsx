@@ -101,7 +101,7 @@ function Home(params) {
             khoruji return mikone.
             dar asl dalil asli ke az 'map' bejaye 'foreach' estefade mishe ine ke har bar dar khoruji object ro return mikone
           */}
-          {articlesAPI.map( articleObject => (
+          {articlesAPI.map( (articleObject, index) => (
             /* 
               ma inja baraye zamani ke mikhaim ruye article mizanim bere be safhe data marbut be har article pas bayad az tag 'Link'
               estefade konim va baraye inke dar props 'to' id har article ro dar url befrestim bayad az '``' estefade konim ke dar 
@@ -109,9 +109,10 @@ function Home(params) {
             */ 
             <Link to={`/article/${articleObject.id}`} >
               {/* 
-                dar inja object be surat props be component ersal mishe va baraye moshakhas budan har component bayad 'key' unique bedim. 
+                dar inja object be surat props be component ersal mishe va baraye moshakhas budan har article be surat joda bayad 
+                'key' unique bedim be onvan neshane. 
               */}
-              <Article article={articleObject} />
+              <Article article={articleObject} key={index} />
             </Link>
           ))}
         </div>
