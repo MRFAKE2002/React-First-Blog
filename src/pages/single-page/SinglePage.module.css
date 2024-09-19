@@ -1,0 +1,29 @@
+.singlePage {
+  text-align: center;
+}
+
+.singlePage h1 {
+  text-align: right;
+  margin: 20px 0;
+}
+
+.articleInfo {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+}
+
+.articleInfo span {
+  margin: 0 0 30px 30px;
+  color: #777;
+}
+
+.singlePage img {
+  width: 90%;
+  height: auto;
+}
+
+.singlePage p {
+  margin: 20px 0;
+  text-align: right;
+}

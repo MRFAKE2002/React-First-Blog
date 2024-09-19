@@ -1,6 +1,7 @@
 // components
 import AboutUs from "./pages/about-us/AboutUs";
 import Home from "./pages/home/Home";
+import SinglePage from "./pages/single-page/SinglePage";
 
 // libraries
 import { Route, Routes } from "react-router-dom";
@@ -16,6 +17,11 @@ function App() {
         */}
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
+        {/* 
+          dar inja ma bayad baraye inke dakhel single-page ya hamun data article bayad biaim baraye url 'id' moshakhas konim 
+          baraye shenase har article.
+         */}
+        <Route path="/article/:articleId" element={<SinglePage />} />
       </Routes>
     </div>
   );
