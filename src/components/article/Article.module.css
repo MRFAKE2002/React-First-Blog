@@ -5,7 +5,6 @@
         valede in article cart mitunim ina ro kenar ham bezarim va ba gozashtan 'justify-content: space-between;' bein cart ha 
         fasele bezarim
     */
-    width: 23%;
     height: auto;
     margin: 15px 0;
     box-shadow: 1px 2px 3px #777;
@@ -18,11 +17,11 @@
 
 .articleCart h3 {
     text-align: right;
-    padding: 10px;
+    padding: 0 10px;
     font-size: 20px;
 }
 
 .articleCart p {
     text-align: right;
-    padding: 0 10px;
+    padding: 10px;
 }

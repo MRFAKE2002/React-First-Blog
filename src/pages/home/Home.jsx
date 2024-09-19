@@ -4,13 +4,14 @@ import style from "./Home.module.css";
 // components
 import Navbar from "../../components/navbar/Navbar";
 import Article from "../../components/article/Article";
+import Footer from "../../components/footer/Footer";
 
 // hooks
 import { useEffect, useState } from "react";
 
 // libraries
 import axios from "axios";
-import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
 function Home(params) {
   /*
@@ -101,8 +102,17 @@ function Home(params) {
             dar asl dalil asli ke az 'map' bejaye 'foreach' estefade mishe ine ke har bar dar khoruji object ro return mikone
           */}
           {articlesAPI.map( articleObject => (
-            // dar inja object be surat props be component ersal mishe va baraye moshakhas budan har component bayad 'key' unique bedim.
-            <Article article={articleObject} />
+            /* 
+              ma inja baraye zamani ke mikhaim ruye article mizanim bere be safhe data marbut be har article pas bayad az tag 'Link'
+              estefade konim va baraye inke dar props 'to' id har article ro dar url befrestim bayad az '``' estefade konim ke dar 
+              js zamani ke mikhaim bein matni az js benevisim estefade mikonim
+            */ 
+            <Link to={`/article/${articleObject.id}`} >
+              {/* 
+                dar inja object be surat props be component ersal mishe va baraye moshakhas budan har component bayad 'key' unique bedim. 
+              */}
+              <Article article={articleObject} />
+            </Link>
           ))}
         </div>
       </div>

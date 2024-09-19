@@ -14,3 +14,11 @@
     flex-wrap: wrap;
     flex-direction: row-reverse;
 }
+
+/* 
+    in baraye zamanie ke ma tamam article ro dakhel ye tag 'Link' gozashtim pas bayad andaze har article ro dorost konim
+*/
+.homeArticles a {
+    width: 23%;
+
+}

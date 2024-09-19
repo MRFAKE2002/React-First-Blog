@@ -20,7 +20,8 @@ h3,
 h4,
 h5,
 h6,
-ul {
+ul,
+p {
   margin: 0;
   padding: 0;
   /* baraye az bein bordan pishfarz tag 'ul' bayad gozashte beshe */
