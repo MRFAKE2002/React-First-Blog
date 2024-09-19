@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
         {/*
           dar inja ma har chand ta ke bekhaim 'Route' misazim hala baraye ha 'Route' bayad 2 ta props barash befrestim :
@@ -23,7 +23,7 @@ function App() {
          */}
         <Route path="/article/:articleId" element={<SinglePage />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

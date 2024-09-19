@@ -71,7 +71,7 @@ function SinglePage(props) {
   }, []);
 
   return (
-    <div>
+    <>
       <Navbar title="روزبه شاپ" />
       <div className={style.singlePage}>
         <div className="container">
@@ -86,7 +86,7 @@ function SinglePage(props) {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -90,35 +90,37 @@ function Home(params) {
   }, []);
 
   return (
-    <div className={style.homeWrapper}>
+    <>
       <Navbar title="روزبه شاپ" />
-      <div className="container">
-        <h2>مقالات جدید</h2>
-        <div className={style.homeArticles}>
-          {/* 
-            dar inja baraye inke bayad dinamic baraye har yek az object darun list articlesAPI bayad component 'Article' estefade beshe
-            pas ma bayad inja az 'map' estefade konim ke miad dakhel list araye halghe mizane va har yek az object darun list ra dar 
-            khoruji return mikone.
-            dar asl dalil asli ke az 'map' bejaye 'foreach' estefade mishe ine ke har bar dar khoruji object ro return mikone
-          */}
-          {articlesAPI.map( (articleObject, index) => (
-            /* 
-              ma inja baraye zamani ke mikhaim ruye article mizanim bere be safhe data marbut be har article pas bayad az tag 'Link'
-              estefade konim va baraye inke dar props 'to' id har article ro dar url befrestim bayad az '``' estefade konim ke dar 
-              js zamani ke mikhaim bein matni az js benevisim estefade mikonim
-            */ 
-            <Link to={`/article/${articleObject.id}`} >
-              {/* 
-                dar inja object be surat props be component ersal mishe va baraye moshakhas budan har article be surat joda bayad 
-                'key' unique bedim be onvan neshane. 
-              */}
-              <Article article={articleObject} key={index} />
-            </Link>
-          ))}
+      <div className={style.homeWrapper}>
+        <div className="container">
+          <h2>مقالات جدید</h2>
+          <div className={style.homeArticles}>
+            {/*
+              dar inja baraye inke bayad dinamic baraye har yek az object darun list articlesAPI bayad component 'Article' estefade beshe
+              pas ma bayad inja az 'map' estefade konim ke miad dakhel list araye halghe mizane va har yek az object darun list ra dar
+              khoruji return mikone.
+              dar asl dalil asli ke az 'map' bejaye 'foreach' estefade mishe ine ke har bar dar khoruji object ro return mikone
+            */}
+            {articlesAPI.map( (articleObject, index) => (
+              /*
+                ma inja baraye zamani ke mikhaim ruye article mizanim bere be safhe data marbut be har article pas bayad az tag 'Link'
+                estefade konim va baraye inke dar props 'to' id har article ro dar url befrestim bayad az '``' estefade konim ke dar
+                js zamani ke mikhaim bein matni az js benevisim estefade mikonim
+              */
+              <Link to={`/article/${articleObject.id}`} >
+                {/*
+                  dar inja object be surat props be component ersal mishe va baraye moshakhas budan har article be surat joda bayad
+                  'key' unique bedim be onvan neshane.
+                */}
+                <Article article={articleObject} key={index} />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
