@@ -1,0 +1,24 @@
+.createArticle h1 {
+  text-align: right;
+  margin: 20px 0;
+}
+
+.createButton {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.createButton button {
+  color: #fff;
+  background-color: rgb(6 94 255);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.createButton button:active {
+  opacity: 0.8;
+}

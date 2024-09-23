@@ -3,7 +3,7 @@
   "message": "success",
   "data": [
     {
-      "id": 1,
+      "id": "1",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article1",
       "readTimer": "3",
@@ -12,7 +12,7 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 2,
+      "id": "2",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article2",
       "readTimer": "4",
@@ -21,7 +21,7 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 3,
+      "id": "3",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article3",
       "readTimer": "2",
@@ -30,7 +30,7 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 4,
+      "id": "4",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article4",
       "readTimer": "6",
@@ -39,7 +39,7 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 5,
+      "id": "5",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article5",
       "readTimer": "3",
@@ -48,7 +48,7 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 6,
+      "id": "6",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article6",
       "readTimer": "4",
@@ -57,7 +57,7 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 7,
+      "id": "7",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article7",
       "readTimer": "2",
@@ -66,13 +66,22 @@
       "content": "این یه متن راجب مقاله است"
     },
     {
-      "id": 8,
+      "id": "8",
       "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
       "articleName": "article8",
       "readTimer": "6",
       "date": "1403/09/28",
       "author": "روزبه بدلی",
       "content": "این یه متن راجب مقاله است"
+    },
+    {
+      "id": 9,
+      "articleName": "مقاله جدید",
+      "date": "1403/7/2",
+      "imageUrl": "https://k2bindia.com/wp-content/uploads/2015/08/React.png",
+      "content": "این یک مقاله جدید است",
+      "author": "روزبه بدلی",
+      "readTimer": "5"
     }
   ]
 }
