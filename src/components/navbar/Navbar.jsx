@@ -30,7 +30,9 @@ function Navbar(props) {
               */}
               <Link to="/">لیست مقالات</Link>
             </li>
-            <li>ساخت مقاله جدید</li>
+            <li>
+              <Link to="/create-article"> ساخت مقاله جدید </Link>
+            </li>
             <li>
               <Link to="/about-us">درباره ما</Link>
             </li>

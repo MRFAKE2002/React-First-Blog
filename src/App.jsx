@@ -1,5 +1,6 @@
 // components
 import AboutUs from "./pages/about-us/AboutUs";
+import CreateArticle from "./pages/create-article/CreateArticle";
 import Home from "./pages/home/Home";
 import SinglePage from "./pages/single-page/SinglePage";
 
@@ -22,6 +23,7 @@ function App() {
           baraye shenase har article.
          */}
         <Route path="/article/:articleId" element={<SinglePage />} />
+        <Route path="/create-article" element={<CreateArticle />} />
       </Routes>
     </>
   );
