@@ -4,6 +4,7 @@ import style from "./SinglePage.module.css";
 // components
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import Spinner from "../../components/loading/Spinner";
 
 // image
 import articleImage from "../../components/assets/images/articleImage.png";
@@ -35,8 +36,20 @@ function SinglePage(props) {
   */
   const [articleInfo, setArticleInfo] = useState([]);
 
+  /*
+    dar inja baraye inke ma betunim loading page ro zamani ke API call mishe baraye zamani ke data dir miad ya server ya internet konde 
+    bayad loading estefade konim pas 2 halat dare inke data reside ya data nareside ke dar default data vojud nadare va safhe Initialization 
+    surat migire pas meghdar avaliye ro 'false' mizarim:
+    1- halat aval mounting surat migire va mohtaviat dakhel useEffect ke API call hast etefagh miofte pas inja bayad ghabl az gereftan 
+    data meghdar 'isLoading' true beshe.
+    2- halat dovom zamani ke data gerefte shod dige bayad safhe neshun dade beshe pas 'isLoading' false mishe dobare. 
+  */
+  const [isLoading, setIsLoading] = useState(false);
+
   // dar inja bayad API call surat begire ta ma betunim data har article ro begirim va estefade konim ke in kar bayad dar useEffect bashe.
   useEffect(() => {
+    setIsLoading(true);
+
     // alan bayad az axios vase APIc call estefade konim.
     axios
       .get(`http://localhost:8000/data/${params.articleId}`)
@@ -64,27 +77,35 @@ function SinglePage(props) {
           estefade konim bayad dakhel moteghayer berizim ke in kar bayad az useState estefade konim
         */
         setArticleInfo(response.data);
+
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
+
+        setIsLoading(false);
       });
   }, []);
 
   return (
     <>
       <Navbar title="روزبه شاپ" />
-      <div className={style.singlePage}>
-        <div className="container">
-          <h1>{articleInfo.articleName}</h1>
-          <div className={style.articleInfo}>
-            <span>{articleInfo.date} :تاریخ انتشار مقاله</span>
-            <span>{articleInfo.author} :نویسنده مقاله</span>
-            <span>{articleInfo.readTimer} :مدت زمان خواندن</span>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className={style.singlePage}>
+          <div className="container">
+            <h1>{articleInfo.articleName}</h1>
+            <div className={style.articleInfo}>
+              <span>{articleInfo.date} :تاریخ انتشار مقاله</span>
+              <span>{articleInfo.author} :نویسنده مقاله</span>
+              <span>{articleInfo.readTimer} :مدت زمان خواندن</span>
+            </div>
+            <img src={articleInfo.imageUrl} alt="" />
+            <p>{articleInfo.content}</p>
           </div>
-          <img src={articleInfo.imageUrl} alt="" />
-          <p>{articleInfo.content}</p>
         </div>
-      </div>
+      )}
       <Footer />
     </>
   );
