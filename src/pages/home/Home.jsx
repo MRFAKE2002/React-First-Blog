@@ -5,6 +5,7 @@ import style from "./Home.module.css";
 import Navbar from "../../components/navbar/Navbar";
 import Article from "../../components/article/Article";
 import Footer from "../../components/footer/Footer";
+import Spinner from "../../components/loading/Spinner";
 
 // hooks
 import { useEffect, useState } from "react";
@@ -24,6 +25,16 @@ function Home(params) {
   const [articlesAPI, setArticlesAPI] = useState([]);
 
   /*
+    dar inja baraye inke ma betunim loading page ro zamani ke API call mishe baraye zamani ke data dir miad ya server ya internet konde 
+    bayad loading estefade konim pas 2 halat dare inke data reside ya data nareside ke dar default data vojud nadare va safhe Initialization 
+    surat migire pas meghdar avaliye ro 'false' mizarim:
+    1- halat aval mounting surat migire va mohtaviat dakhel useEffect ke API call hast etefagh miofte pas inja bayad ghabl az gereftan 
+    data meghdar 'isLoading' true beshe.
+    2- halat dovom zamani ke data gerefte shod dige bayad safhe neshun dade beshe pas 'isLoading' false mishe dobare. 
+  */
+  const [isLoading, setIsLoading] = useState(false);
+
+  /*
     useEffect: yek hook zamani estefade mishe ke bekhaim rerender anjam beshe. aval yekdor safhe bala miad va bade oun tamame chizhayi ke
     dakhel useEffect hast ejra mishe. dar asl bayad data dakhel useEffect bashe ta age taghyir kard be surat khodkar refresh mishe 
     va data rerender mishe. 
@@ -34,6 +45,8 @@ function Home(params) {
   */
   useEffect(() => {
     // API call
+
+    setIsLoading(true);
 
     /* 
       baraye anjam API call va gereftan data mishe az 'fetch' estefade kard vali mishe az ketabkhune 'axios' ham estefade kard
@@ -66,8 +79,9 @@ function Home(params) {
             Object
           '
           dar inja mifahmim data vojud dare pas ba zadan 'api.data' be list az object ke har kodum data marbut be yek article hast be ma dade mishe
+        
+          dar inja ma az useState baraye taghyir maghadir data estefade kardim va useEffect motevajeh shod ke bayad rerender bokone
         */
-        // dar inja ma az useState baraye taghyir maghadir data estefade kardim va useEffect motevajeh shod ke bayad rerender bokone
         setArticlesAPI(api.data);
         /*
           alan maghdar moteghayer articlesAPI list data object articles:
@@ -83,9 +97,11 @@ function Home(params) {
           length: 4
           '
         */
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
       });
   }, []);
 
@@ -95,28 +111,32 @@ function Home(params) {
       <div className={style.homeWrapper}>
         <div className="container">
           <h2>مقالات جدید</h2>
-          <div className={style.homeArticles}>
-            {/*
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <div className={style.homeArticles}>
+              {/*
               dar inja baraye inke bayad dinamic baraye har yek az object darun list articlesAPI bayad component 'Article' estefade beshe
               pas ma bayad inja az 'map' estefade konim ke miad dakhel list araye halghe mizane va har yek az object darun list ra dar
               khoruji return mikone.
               dar asl dalil asli ke az 'map' bejaye 'foreach' estefade mishe ine ke har bar dar khoruji object ro return mikone
             */}
-            {articlesAPI.map( (articleObject, index) => (
-              /*
+              {articlesAPI.map((articleObject, index) => (
+                /*
                 ma inja baraye zamani ke mikhaim ruye article mizanim bere be safhe data marbut be har article pas bayad az tag 'Link'
                 estefade konim va baraye inke dar props 'to' id har article ro dar url befrestim bayad az '``' estefade konim ke dar
                 js zamani ke mikhaim bein matni az js benevisim estefade mikonim
               */
-              <Link to={`/article/${articleObject.id}`} >
-                {/*
+                <Link to={`/article/${articleObject.id}`}>
+                  {/*
                   dar inja object be surat props be component ersal mishe va baraye moshakhas budan har article be surat joda bayad
                   'key' unique bedim be onvan neshane.
                 */}
-                <Article article={articleObject} key={index} />
-              </Link>
-            ))}
-          </div>
+                  <Article article={articleObject} key={index} />
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <Footer />
