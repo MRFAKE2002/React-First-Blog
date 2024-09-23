@@ -14,6 +14,14 @@ code {
 
 /* global css */
 
+* {
+  /* 
+    in be in dalile ke padding ya margin ro ham jozvi az arz hesab beshe
+  */
+  box-sizing: border-box;
+}
+
+
 h1,
 h2,
 h3,
