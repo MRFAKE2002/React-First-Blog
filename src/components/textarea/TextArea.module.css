@@ -1,0 +1,17 @@
+.textAreaForm {
+  text-align: right;
+}
+
+.textAreaForm label {
+  display: block;
+  font-size: 20px;
+  margin: 10px 0;
+  color: #777;
+}
+
+.textAreaForm textarea {
+  width: 100%;
+  min-height: 200px;
+  text-align: right;
+  outline: none;
+}
